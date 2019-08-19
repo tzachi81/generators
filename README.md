@@ -12,10 +12,12 @@
 **The for..of loop doesn't work with Objects because they are not "iterable", and therefore don't have a [Symbol.iterator] property.**
 
 ### Iterator protocol
-    An object is an iterator when it implements a next() method:
-    next() - returns an object with at least two properties:
-        done(bool) - indicates if passed all iterables
-        value(any) - returns the current iterable value, undefined for the value of {done: true}
+An object is an iterator when it implements a next() method:
+- next() - returns an object with at least two properties:
+    - done(bool) - indicates if passed all iterables
+    - value(any) - returns the current iterable value, undefined for the value of {done: true}.
+   
+"The yield keyword is used to pause and resume a generator function *()". (from: MDN web docs)
 
 Reference:
 
@@ -27,11 +29,7 @@ Reference:
 - Generator functions are iterator protocol functions that can break the 'Run-to-completion' paradigm.
 - Calling a generator function does not execute its body immediately, but retuns a Generator object instead.
     to execute its body, you have to call the .next() method by its object reference.
-- Generator functions can get and pass values with a two-way communication using [yield] and [next()] :
-    "The yield keyword is used to pause and resume a generator function *()". (from: MDN web docs)
-    yield returns an IteratorResult object with two properties, value and done:
-        yield passes its next value to next() method or gets a value, if calling next() with an argument: next(arg).
-    next() calls the first function body's yield expression and returns an object with the yielded value and done boolean value.
+- Generator functions can get and pass values with a two-way communication using [yield] and [next()].
 - The yield* expression is used to delegate to another generator or iterable object.
 - A return statement in the function generator will make it finish (done: true).
   A throw exception in the function generator will make it finish (done: true).
@@ -47,13 +45,13 @@ References:
 **"Without generators, async functions are very difficult to handle."**
 
 ES6 introduced us generators and promises, and ES8 introduced us async/await. 
-### So, why do we need to understand promises and generators?**
-    - supporting older platforms.
-    - running on older browser versions or older Node.js versions.
+### So, why do we need to understand promises and generators?
+- supporting older platforms.
+- running on older browser versions or older Node.js versions.
 
-- browsers also implement async functions in a similar way:
-    - they transform the async code to use generators and promises, quite similar to Babel.
-- Generator functions can yield promises.
+browsers also implement async functions in a similar way:
+- they transform the async code to use generators and promises, quite similar to Babel.
+Generator functions can yield promises.
 
 
 Reference:

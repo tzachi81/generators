@@ -1,7 +1,7 @@
 # Generators and Iterators in JavaScript
 
 ## Main points covered in this document
-- iterable objects and the iterator protocol
+- iterable data types and objects and the iterator protocol
 - generator functions and generator object
 - generator functions with promises and their late ES8 edtion: async/await.
 
@@ -10,20 +10,20 @@
 --------------------
 **"iterator is an object which defines a sequence and potentially a return value upon its termination." (MDN web docs)**
 
-### Iterable protocol
-- **for..in** loop is for enumerable properties (including Object data type) - they return their object keys.
-- **for..of** loop is a method, introduced in ES2015, for iterating over "iterable collections" - they return their object values.
-- These are the objects/ data-types that have a [Symbol.iterator] property:
-    built-in iterables: Array, TypedArray, String, Map, Set. 
-- **The for..of loop doesn't work with Objects because they are not "iterable", and therefore don't have a [Symbol.iterator] property.**
+### Iterable data types and objects
+- **for..in** loop is for enumerable properties (including Object data type) - they return their object *keys*.
+- **for..of** loop is a method, introduced in ES2015, for iterating over "iterable collections" - they return their object *values*.
+- These are the objects/data-types that have a [Symbol.iterator] function built-in: Array, TypedArray, String, Map, Set. 
+- *for..of* loop won't work with Objects because they are not "iterable", hence, don't have the [Symbol.iterator] property by default.
 
 ### Iterator protocol
 An object is an iterator when it implements a next() method:
 - next() - returns an object with at least two properties:
     - done(bool) - indicates if passed all iterables
     - value(any) - returns the current iterable value, undefined for the value of {done: true}.
-   
-"The yield keyword is used to pause and resume a generator function *()". (from: MDN web docs)
+    ```
+    {value: "someValue", done: false}   // Example for iteration in sequence.
+    {value: undefined, done: true}  // Example when the sequence is done (last iterable item was called).
 
 Reference:
 
@@ -35,8 +35,9 @@ Reference:
 - Generator functions are iterator protocol functions that can break the 'Run-to-completion' paradigm.
 - Calling a generator function does not execute its body immediately, but retuns a Generator object instead.
     to execute its body, you have to call the .next() method by its object reference.
-- Generator functions can get and pass values with a two-way communication using [yield] and [next()].
-- The yield* expression is used to delegate to another generator or iterable object.
+- Generator functions can get and pass values with a two-way communication using *yield* and *next()*.
+"The yield keyword is used to pause and resume a generator function *()". (from: MDN web docs)
+- The *yield** expression is used to delegate to another generator or iterable object. 
 - A return statement in the function generator will make it finish (done: true).
 - A throw exception in the function generator will make it finish (done: true).
   
@@ -54,14 +55,41 @@ References:
 ## 3. Async/Await vs. Generators with Promises
 **"Without generators, async functions are very difficult to handle."**
 
-ES6 introduced us generators and promises, and ES8 introduced us a more elegant way to use it - async/await. 
-### So, why do we need to understand promises and generators?
-- supporting older platforms.
-- running on older browser versions or older Node.js versions.
+ES6 introduced us generators and promises, and ES8 introduced us a more elegant way to use it with *async/await*. 
+### Why do we need to understand promises and generators?
+- Supporting older platforms.
+- Running on older browser versions or older Node.js versions.
+- Debugging potentially backwards compatibility compilers (like 'babel') issues with async functions.
 
 browsers also implement async functions in a similar way:
 - they transform the async code to use generators and promises, quite similar to Babel.
-Generator functions can yield promises.
+The early use of async/await iES6 was done by using Generator functions that yielded promises.
+
+**The ES6 way to use async functions was by combining genrator functions with promises:**
+```
+const gen = function* generator() {
+    const a = yield Promise.resolve(1);
+    const b = yield Promise.resolve(2);
+
+    return a + b;
+};
+
+const iterator = gen();
+console.log(iterator.next()); // { value: Promise(1), done: false }
+console.log(iterator.next()) // { value: Promise(2), done: false }
+console.log(iterator.next()) // { value: NaN, done: true }
+```
+
+**In ES8 it can be translated to a more elegant code with async/await**
+```
+const promisory = async function test() {
+    const a = await Promise.resolve(1);
+    const b = await Promise.resolve(2);
+
+    return a + b;
+
+};
+```
 
 
 References:

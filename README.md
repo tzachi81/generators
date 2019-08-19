@@ -5,11 +5,11 @@
 **"iterator is an object which defines a sequence and potentially a return value upon its termination." (MDN web docs)**
 
 ### Iterable protocol
-- for..in  - for enumerable properties (including Object data type).
-- for..of is a method, introduced in ES2015, for iterating over "iterable collections".
+- for..in are for enumerable properties (including Object data type) - they return their object keys.
+- for..of is a method, introduced in ES2015, for iterating over "iterable collections" - they return their object values.
 - These are the objects/ data-types that have a [Symbol.iterator] property:
-    built-in iterables: Array, TypedArray, String, Map, Set.
-**The for..of loop doesn't work with Objects because they are not "iterable", and therefore don't have a [Symbol.iterator] property.**
+    built-in iterables: Array, TypedArray, String, Map, Set. 
+- **The for..of loop doesn't work with Objects because they are not "iterable", and therefore don't have a [Symbol.iterator] property.**
 
 ### Iterator protocol
 An object is an iterator when it implements a next() method:
@@ -33,6 +33,10 @@ Reference:
 - The yield* expression is used to delegate to another generator or iterable object.
 - A return statement in the function generator will make it finish (done: true).
   A throw exception in the function generator will make it finish (done: true).
+  
+**Question: Is a generator object an iterator or an iterable?**
+
+**Answer: An iterator object is both iterator and iterable**
 
 References:
 

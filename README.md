@@ -34,7 +34,13 @@ Reference:
 --------------------
 - Generator functions are iterator protocol functions that can break the 'Run-to-completion' paradigm.
 - Calling a generator function does not execute its body immediately, but retuns a Generator object instead.
-    to execute its body, you have to call the .next() method by its object reference.
+    to execute its body, you have to call the .next() method by its object reference, like so:
+    ```js
+    //gen(), A.K.A the generator function, will return a generator object rather than executing the function's body:
+    let iterator = gen(); 
+    // calling the .next() method will start the generator function's body execution until it will hit the next yield expression.
+    iterator.next();    
+    ```
 - Generator functions can get and pass values with a two-way communication using *yield* and *next()*.
 "The yield keyword is used to pause and resume a generator function *()". (from: MDN web docs)
 - The *yield** expression is used to delegate to another generator or iterable object. 

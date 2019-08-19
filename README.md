@@ -5,8 +5,8 @@
 **"iterator is an object which defines a sequence and potentially a return value upon its termination." (MDN web docs)**
 
 ### Iterable protocol
-- for..in are for enumerable properties (including Object data type) - they return their object keys.
-- for..of is a method, introduced in ES2015, for iterating over "iterable collections" - they return their object values.
+- **for..in** loop is for enumerable properties (including Object data type) - they return their object keys.
+- **for..of** loop is a method, introduced in ES2015, for iterating over "iterable collections" - they return their object values.
 - These are the objects/ data-types that have a [Symbol.iterator] property:
     built-in iterables: Array, TypedArray, String, Map, Set. 
 - **The for..of loop doesn't work with Objects because they are not "iterable", and therefore don't have a [Symbol.iterator] property.**
@@ -63,3 +63,6 @@ Reference:
 - [https://hackernoon.com/async-await-generators-promises-51f1a6ceede2](https://hackernoon.com/async-await-generators-promises-51f1a6ceede2)
 - [https://hackernoon.com/using-javascript-generator-and-promises-77d7dc977](https://hackernoon.com/using-javascript-generator-and-promises-77d7dc977)
 - [https://www.promisejs.org/generators/](https://www.promisejs.org/generators/)
+
+## Further reading:
+[You-Dont-Know-JS, Async and Performance, Chapter4: Generators](https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch4.md)

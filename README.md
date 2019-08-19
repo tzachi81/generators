@@ -21,7 +21,7 @@ An object is an iterator when it implements a next() method:
 - next() - returns an object with at least two properties:
     - done(bool) - indicates if passed all iterables
     - value(any) - returns the current iterable value, undefined for the value of {done: true}.
-    ```
+    ```js
     {value: "someValue", done: false}   // Example for iteration in sequence.
     {value: undefined, done: true}  // Example when the sequence is done (last iterable item was called).
 
@@ -66,7 +66,7 @@ browsers also implement async functions in a similar way:
 The early use of async/await iES6 was done by using Generator functions that yielded promises.
 
 **The ES6 way to use async functions was by combining genrator functions with promises:**
-```
+```js
 const gen = function* generator() {
     const a = yield Promise.resolve(1);
     const b = yield Promise.resolve(2);
@@ -81,7 +81,7 @@ console.log(iterator.next()) // { value: NaN, done: true }
 ```
 
 **In ES8 it can be translated to a more elegant code with async/await**
-```
+```js
 const promisory = async function test() {
     const a = await Promise.resolve(1);
     const b = await Promise.resolve(2);

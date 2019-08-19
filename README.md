@@ -1,6 +1,6 @@
 # Generators and Iterators in JavaScript
 
-## What are iterators?
+## 1. What are iterators?
 --------------------
 **"iterator is an object which defines a sequence and potentially a return value upon its termination." (MDN web docs)**
 
@@ -24,7 +24,7 @@ Reference:
 - [https://bitsofco.de/for-in-vs-for-of/](https://bitsofco.de/for-in-vs-for-of/)
 
 
-## Generator object and generator functions
+## 2. Generator object and generator functions
 --------------------
 - Generator functions are iterator protocol functions that can break the 'Run-to-completion' paradigm.
 - Calling a generator function does not execute its body immediately, but retuns a Generator object instead.
@@ -45,7 +45,7 @@ References:
 - [the-hidden-power-of-es6-generators-observable-async-flow-control-cfa4c7f31435](the-hidden-power-of-es6-generators-observable-async-flow-control-cfa4c7f31435)
 
 
-## Async/Await vs. Generators with Promises
+## 3. Async/Await vs. Generators with Promises
 **"Without generators, async functions are very difficult to handle."**
 
 ES6 introduced us generators and promises, and ES8 introduced us async/await. 
@@ -58,11 +58,11 @@ browsers also implement async functions in a similar way:
 Generator functions can yield promises.
 
 
-Reference:
+References:
 
 - [https://hackernoon.com/async-await-generators-promises-51f1a6ceede2](https://hackernoon.com/async-await-generators-promises-51f1a6ceede2)
 - [https://hackernoon.com/using-javascript-generator-and-promises-77d7dc977](https://hackernoon.com/using-javascript-generator-and-promises-77d7dc977)
 - [https://www.promisejs.org/generators/](https://www.promisejs.org/generators/)
 
-## Further reading:
+## 4. Further reading:
 [You-Dont-Know-JS, Async and Performance, Chapter4: Generators](https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch4.md)

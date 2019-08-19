@@ -54,7 +54,7 @@ References:
 ## 3. Async/Await vs. Generators with Promises
 **"Without generators, async functions are very difficult to handle."**
 
-ES6 introduced us generators and promises, and ES8 introduced us async/await. 
+ES6 introduced us generators and promises, and ES8 introduced us a more elegant way to use it - with async/await. 
 ### So, why do we need to understand promises and generators?
 - supporting older platforms.
 - running on older browser versions or older Node.js versions.

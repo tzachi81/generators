@@ -3,7 +3,7 @@
 ## Main points covered in this document
 - iterable objects and the iterator protocol
 - generator functions and generator object
-- generator faunctions with promises and their late ES8 edtion: async/await.
+- generator functions with promises and their late ES8 edtion: async/await.
 
 
 ## 1. What are iterators?

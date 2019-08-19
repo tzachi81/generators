@@ -32,7 +32,7 @@ Reference:
 - Generator functions can get and pass values with a two-way communication using [yield] and [next()].
 - The yield* expression is used to delegate to another generator or iterable object.
 - A return statement in the function generator will make it finish (done: true).
-  A throw exception in the function generator will make it finish (done: true).
+- A throw exception in the function generator will make it finish (done: true).
   
 **Question: Is a generator object an iterator or an iterable?**
 

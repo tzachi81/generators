@@ -4,14 +4,14 @@
 --------------------
 **"iterator is an object which defines a sequence and potentially a return value upon its termination." (MDN web docs)**
 
-### Iterable protocol:
+### Iterable protocol
 - for..in  - for enumerable properties (including Object data type).
 - for..of is a method, introduced in ES2015, for iterating over "iterable collections".
 - These are the objects/ data-types that have a [Symbol.iterator] property:
     built-in iterables: Array, TypedArray, String, Map, Set.
-    **The for..of loop doesn't work with Objects because they are not "iterable", and therefore don't have a [Symbol.iterator] property.**
+**The for..of loop doesn't work with Objects because they are not "iterable", and therefore don't have a [Symbol.iterator] property.**
 
-### Iterator protocol:
+### Iterator protocol
     An object is an iterator when it implements a next() method:
     next() - returns an object with at least two properties:
         done(bool) - indicates if passed all iterables
@@ -24,17 +24,17 @@ Reference:
 
 ## Generator object and generator functions
 --------------------
-1. Generator functions are iterator protocol functions that can break the 'Run-to-completion' paradigm.
-2. Calling a generator function does not execute its body immediately, but retuns a Generator object instead.
+- Generator functions are iterator protocol functions that can break the 'Run-to-completion' paradigm.
+- Calling a generator function does not execute its body immediately, but retuns a Generator object instead.
     to execute its body, you have to call the .next() method by its object reference.
-3. Generator functions can get and pass values with a two-way communication using [yield] and [next()] :
+- Generator functions can get and pass values with a two-way communication using [yield] and [next()] :
     "The yield keyword is used to pause and resume a generator function *()". (from: MDN web docs)
     yield returns an IteratorResult object with two properties, value and done:
         yield passes its next value to next() method or gets a value, if calling next() with an argument: next(arg).
     next() calls the first function body's yield expression and returns an object with the yielded value and done boolean value.
-3. The yield* expression is used to delegate to another generator or iterable object.
-4. A return statement in the function generator will make it finish (done: true).
-   A throw exception in the function generator will make it finish (done: true).
+- The yield* expression is used to delegate to another generator or iterable object.
+- A return statement in the function generator will make it finish (done: true).
+  A throw exception in the function generator will make it finish (done: true).
 
 References:
 

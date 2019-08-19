@@ -1,20 +1,20 @@
 
 /*  Example1: the built-in Symbole.iterator method under the hood   */
-//  let str = 'abc';
-//  console.log(...str); //outputs "a b c"
+ let str = 'abc';
+ console.log(...str); //outputs "a b c"
 
-// stringIterator = () => {
-//         let str = 'abc';
-//         console.log( `The type of str[Symbol.iterator] is: ${typeof str[Symbol.iterator]}` ); //"function" (factory)
-//         let iterator = str[Symbol.iterator](); //Symbol.iterator is a factory
-//         debugger;
-//         console.log(iterator + ''); // "[object String Iterator]"
-//         console.log(iterator.next()); // { value: "a", done: false }
-//         console.log(iterator.next()); // { value: "b", done: false }
-//         console.log(iterator.next()); // { value: "c", done: false }
-//         console.log(iterator.next()); // { value: undefined, done: true }
-//     }
-// stringIterator();
+stringIterator = () => {
+        let str = 'abc';
+        console.log( `The type of str[Symbol.iterator] is: ${typeof str[Symbol.iterator]}` ); //"function" (factory)
+        let iterator = str[Symbol.iterator](); //Symbol.iterator is a factory
+        debugger;
+        console.log(iterator + ''); // "[object String Iterator]"
+        console.log(iterator.next()); // { value: "a", done: false }
+        console.log(iterator.next()); // { value: "b", done: false }
+        console.log(iterator.next()); // { value: "c", done: false }
+        console.log(iterator.next()); // { value: undefined, done: true }
+    }
+stringIterator();
 
 
 

@@ -10,6 +10,7 @@ const gen = function* generator() {
 };
 
 const iterator = gen();
+debugger;
 iterator.next(); // { value: Promise(1), done: false }
 iterator.next(); // { value: Promise(2), done: false }
 iterator.next(); // { value: NaN, done: true }

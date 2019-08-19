@@ -15,7 +15,8 @@ function* gen() {
 }
 
 const iterator = gen(); // [Generator object gen] from the function * gen().
-console.log(iterator.next()); //{ value: 0, done: false }
+console.log(iterator.next());
+debugger; //{ value: 0, done: false }
 countToX(5);
 console.log(iterator.next()); //{ value: 1, done: false }
 console.log(iterator.next()); //{ value: undefined, done: true }

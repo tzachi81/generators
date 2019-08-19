@@ -1,5 +1,10 @@
 # Generators and Iterators in JavaScript
 
+## Main points
+- iterable objects and the iterator protocol
+- generator functions and generator object
+- generator faunctions with promises and their late ES8 edtion as async/await.
+
 ## 1. What are iterators?
 --------------------
 **"iterator is an object which defines a sequence and potentially a return value upon its termination." (MDN web docs)**

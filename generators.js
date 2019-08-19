@@ -15,41 +15,29 @@ function* gen() {
 }
 
 const iterator = gen(); // [Generator object gen] from the function * gen().
-console.log(iterator.next());
-debugger; //{ value: 0, done: false }
+console.log(iterator.next()); //{ value: 0, done: false }
+debugger; 
 countToX(5);
 console.log(iterator.next()); //{ value: 1, done: false }
 console.log(iterator.next()); //{ value: undefined, done: true }
-
-
-
-
-
-
-
-
 
 
 /* Exapmle2: pass value from next() to yield */
 // /*-------------------------------------------*/
 // function* gen() {
 //     let num = 0;
-//     console.log(yield, num);
-//     console.log(yield, num + 1);
+
+//     console.log(yield 1, num);
+//     console.log(yield 2, num + 1);
 // }
 
 // const iterator = gen();
-// iterator.next();
+// console.log(iterator.next("a"));
+// console.log(iterator.next("b"));
+
+// debugger;
 // iterator.next("Number zero").value;
 // iterator.next("Number one").value;
-// debugger;
-
-
-
-
-
-
-
 
 
 

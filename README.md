@@ -22,8 +22,8 @@ An object is an iterator when it implements a next() method:
     - done(bool) - indicates if passed all iterables
     - value(any) - returns the current iterable value, undefined for the value of {done: true}.
     ```js
-    {value: "someValue", done: false}   // Example for iteration in sequence.
-    {value: undefined, done: true}  // Example when the sequence is done (last iterable item was called).
+    {value: "someValue", done: false}   // Example for iterator's return object while in sequence.
+    {value: undefined, done: true}  // Example for iterator's return object when the sequence is done no more values to yield).
 
 Reference:
 

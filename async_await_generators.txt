@@ -1,0 +1,16 @@
+!!! Without generators, async functions are very difficult to handle !!! 
+
+1.  ES6 introduced us generators and promises, and ES8 introduced us async/await.
+2.  So, why do we need to understand promises and generators?
+    - supporting older platforms.
+    - running on older browser versions or older Node.js versions.
+3.  browsers also implement async functions in a similar way:
+    they transform the async code to use generators and promises, quite similar to Babel.
+
+4. generator functions can yield promises
+
+
+Reference: 
+    https://hackernoon.com/async-await-generators-promises-51f1a6ceede2
+    https://hackernoon.com/using-javascript-generator-and-promises-77d7dc977
+    https://www.promisejs.org/generators/

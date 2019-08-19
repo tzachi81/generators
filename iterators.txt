@@ -1,0 +1,19 @@
+What are iterators?
+--------------------
+1. Iterator -  "iterator is an object which defines a sequence and potentially a return value upon its termination." (MDN web docs)
+
+2. Iterable protocol:
+    - for..in  - for enumerable properties (including Object data type).
+    - for..of is a method, introduced in ES2015, for iterating over "iterable collections".
+        These are the objects/ data-types that have a [Symbol.iterator] property:
+        - built-in iterables: Array, TypedArray, String, Map, Set.
+        The for..of loop doesn't work with Objects because they are not "iterable", and therefore don't have a [Symbol.iterator] property
+
+3. Iterator protocol:
+    An object is an iterator when it implements a next() method:
+    next() - returns an object with at least two properties:
+        done(bool) - indicates if passed all iterables
+        value(any) - returns the current iterable value, undefined for the value of {done: true}
+
+
+# Reference: https://bitsofco.de/for-in-vs-for-of/

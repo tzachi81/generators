@@ -69,7 +69,7 @@ ES6 introduced us generators and promises, and ES8 introduced us a more elegant 
 
 browsers also implement async functions in a similar way:
 - they transform the async code to use generators and promises, quite similar to Babel.
-The early use of async/await iES6 was done by using Generator functions that yielded promises.
+The early use of async/await in ES6 was done by using Generator functions that yielded promises.
 
 **The ES6 way to use async functions was by combining genrator functions with promises:**
 ```js

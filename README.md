@@ -34,7 +34,7 @@ Reference:
 --------------------
 - Generator functions are iterator protocol functions that can break the 'Run-to-completion' paradigm.
 - Calling a generator function does not execute its body immediately, but retuns a Generator object instead.
-    to execute its body, you have to call the .next() method by its object reference, like so:
+    To execute its body, you have to call the .next() method by its object reference, like so:
     ```js
     //gen(), A.K.A the generator function, will return a generator object rather than executing the function's body:
     let iterator = gen(); 
@@ -49,7 +49,7 @@ Reference:
   
 **Question: Is a generator object an iterator or an iterable?**
 
-**Answer: An iterator object is both iterator and iterable**
+**Answer: An generator object is both iterator and iterable**
 
 References:
 
